@@ -54,6 +54,16 @@ body {
     text-align: center;
     justify-content: center;
 }
+#cart-counter{
+    position: absolute;
+    top: 5px;
+    right: 45px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 14px;
+}
 
 .icon {
     width: 24px;
@@ -113,7 +123,7 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background-image: linear-gradient(#f0a500, rgb(245, 246, 246));
+    background-image: linear-gradient(#f33eed, rgb(29, 189, 189));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,9 +141,9 @@ body {
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 30px;
-    color: black;
+    color: rgb(251, 249, 249);
 }
 
 .cta-button {
@@ -155,11 +165,11 @@ body {
 .featured-products {
     padding: 50px 20px;
     text-align: center;
-    background-color: #fff;
+    background-color: #f5ecec;
 }
 
-.featured-products h2 {
-    font-size: 2.5rem;
+.featureHeading {
+    font-size: 2.2rem;
     margin-bottom: 30px;
 }
 
@@ -181,19 +191,54 @@ body {
 
 .product-card img {
     width: 100%;
-    height: auto;
+}
+.product-card .product-image{
+    height: 50vh;
+    background-color: black;
+    margin-bottom: 15px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.product-card h1{
+    font-size: 1.2rem;
     margin-bottom: 15px;
 }
+.product-card h4{
+    font-size: 1rem;
+    margin-top: 15px;
+    text-align: left;
+}
 
-.product-card h3 {
+.product-card h2 {
     font-size: 1.3rem;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.product-card h3 {
+    font-size: 1rem;
     margin-bottom: 10px;
+    color: #333;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.product-card h5{
+   font-size: 1rem;
+    margin-bottom: 10px; 
 }
 
 .product-card p {
     font-size: 1.1rem;
     margin-bottom: 15px;
     color: #f0a500;
+}
+.product-card .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .buy-button {
@@ -210,6 +255,43 @@ body {
     background-color: #f0a500;
 }
 
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 120px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.quantity-selector button {
+    width: 42px;
+    height: 30px;
+    background-color: #f0a500;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-selector button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.quantity-value {
+    width: 40px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
 /* Footer */
 .footer {
     padding: 20px;
@@ -223,5 +305,94 @@ body {
         flex-direction: column;
         align-items: center;
     }
+}
+
+
+/* About Us Section */
+.about-us {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+}
+
+.about-us h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.about-us p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+
+/* Contact Us Section */
+.contact-us {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contact-us h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-us p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: none;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #f0a500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #333;
+}
+
+/* Form Submission Result */
+#formResult {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: green;
 }
 
