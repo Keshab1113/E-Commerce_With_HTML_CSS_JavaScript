@@ -79,27 +79,31 @@
     <!-- Contact Us Section -->
     <section class="contact-us" id="contactus">
         <div class="container">
-            <h1>Contact Us</h1>
+            <h1 class="heading">Contact Us</h1>
             <p>If you have any questions or concerns, feel free to contact us by filling out the form below:</p>
     
             <!-- Contact Form -->
-            <form id="contactForm">
+            <form name="contactForm" id="contactForm" onsubmit="messageSend(event)">
                 <div class="form-group">
                     <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name">
+                    <h1 class="inputmessage" id="inputmessageName"></h1>
                 </div>
     
                 <div class="form-group">
                     <label for="email">Your Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" >
+                    <h1 class="inputmessage" id="inputmessageEmail"></h1>
                 </div>
     
                 <div class="form-group">
                     <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <textarea id="message" name="message" rows="5"></textarea>
+                    <h1 class="inputmessage" id="inputMessage"></h1>
                 </div>
     
                 <button type="submit" class="submit-btn">Send Message</button>
+                
             </form>
         </div>
     </section>

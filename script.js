@@ -1,3 +1,4 @@
+// Scrooling
 const productsLink = document.getElementById("productsLink");
 const productsSection = document.getElementById("products");
 productsLink.addEventListener("click", function (event) {
@@ -26,6 +27,9 @@ contactusLink.addEventListener("click", function (event) {
     contactus.scrollIntoView({ behavior: "smooth" });
 });
 
+
+
+// Cart counter
 var cartCounter = document.getElementById("cart-counter");
 var count = 0;
 function Counter() {
@@ -41,6 +45,8 @@ function decrementCount() {
     cartCounter.innerText = count;
 }
 
+
+// Product Fetching
 function fetchProducts() {
     fetch("https://fakestoreapi.com/products")
         .then((response) => response.json())
@@ -79,3 +85,32 @@ function fetchProducts() {
 window.onload = fetchProducts;
 
 
+// Contact form validation
+const inputmessageName = document.getElementById("inputmessageName");
+const inputmessageEmail = document.getElementById("inputmessageEmail");
+const inputMessage = document.getElementById("inputMessage");
+function messageSend(e) {
+    e.preventDefault();
+    let name = document.getElementById("name").value;
+    let email = document.forms["contactForm"]["email"].value;
+    let message = document.forms["contactForm"]["message"].value;
+    if (name === "") {
+        inputmessageName.innerText = "Please Enter a Valid Name";
+        return false;
+    }else if (email === "") {
+        inputmessageEmail.innerText = "Please Enter a Valid Email";
+        return false;
+    }else if (message === "") {
+        inputMessage.innerText = "Please Enter at Least 50 Character";
+        return false;
+    } else {
+        alert("Message Send Successfully.");
+        inputMessage.innerText = "";
+        inputmessageName.innerText = "";
+        inputmessageEmail.innerText = "";
+        document.forms["contactForm"]["name"].value = "";
+        document.forms["contactForm"]["email"].value = "";
+        document.forms["contactForm"]["message"].value = "";
+        return true;
+    }
+}
